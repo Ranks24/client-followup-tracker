@@ -41,7 +41,12 @@ function createContactForm(onSubmit, existingContact = null) {
       createdAt: existingContact ? existingContact.createdAt : new Date().toISOString()
     };
 
-    onSubmit(contact);
+    if (!contact.name.trim() || !contact.email.trim()) {
+  alert('Name and Email are required.');
+  return;
+}
+
+onSubmit(contact);
   });
 
   form.querySelector('#f-cancel').addEventListener('click', () => {

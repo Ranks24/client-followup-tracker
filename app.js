@@ -20,11 +20,20 @@ function openForm(existingContact = null) {
 function getFilteredAndSorted(contacts) {
   const filterValue = document.getElementById('filter-status').value;
   const sortValue = document.getElementById('sort-by').value;
+  const searchValue = document.getElementById('search-input').value.toLowerCase().trim();
 
   let result = [...contacts];
 
   if (filterValue !== 'All') {
     result = result.filter(c => c.status === filterValue);
+  }
+
+  if (searchValue) {
+    result = result.filter(c =>
+      c.name.toLowerCase().includes(searchValue) ||
+      c.company.toLowerCase().includes(searchValue) ||
+      c.email.toLowerCase().includes(searchValue)
+    );
   }
 
   result.sort((a, b) => {
@@ -89,7 +98,8 @@ document.getElementById('add-contact-btn').addEventListener('click', () => {
   openForm();
 });
 
+document.getElementById('search-input').addEventListener('input', renderContacts);
 document.getElementById('filter-status').addEventListener('change', renderContacts);
 document.getElementById('sort-by').addEventListener('change', renderContacts);
 
-renderContacts();S
+renderContacts();

@@ -206,6 +206,143 @@ main {
   color: white;
 }
 
+<<<<<<< HEAD
+=======
+.contact-card-wrapper {
+  border-bottom: 1px solid #e8ecf0;
+}
+
+.contact-card-wrapper .contact-card {
+  border-bottom: none;
+}
+
+.notes-panel {
+  background: #f8fafc;
+  padding: 16px 24px;
+  border-top: 1px solid #e8ecf0;
+}
+
+.notes-list {
+  margin-bottom: 12px;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e8ecf0;
+  font-size: 13px;
+}
+
+.note-date {
+  color: #888;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+.no-notes {
+  color: #888;
+  font-size: 13px;
+}
+
+.note-input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.note-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.note-submit-btn {
+  background: #1e3a5f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.note-submit-btn:hover {
+  background: #162d4a;
+}
+
+.note-view {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.note-actions {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.note-edit-btn {
+  background: none;
+  border: 1px solid #1e3a5f;
+  color: #1e3a5f;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.note-delete-btn {
+  background: none;
+  border: 1px solid #e53e3e;
+  color: #e53e3e;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.note-edit-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.note-edit-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.note-save-btn {
+  background: #1e3a5f;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.note-cancel-btn {
+  background: white;
+  color: #1e3a5f;
+  border: 1px solid #1e3a5f;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+>>>>>>> 666235346836c10c4537c44dc6eb5969d46c1086
 #controls {
   display: flex;
   gap: 12px;
