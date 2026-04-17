@@ -8,10 +8,15 @@ Data is stored locally in the browser via localStorage.
 Small teams who need a simple way to track leads without a full CRM setup.
 
 ## Features (v1)
-- Add, edit and view client contacts
-- Track lead status through a pipeline
-- Set next follow-up dates
-- Log timestamped notes per contact
-- Data persists in the browser
+- Add, edit, and delete client contacts
+- Pipeline status tracking (New, Contacted, Proposal Sent, Won, Lost)
+- Color-coded status badges
+- Follow-up date tracking
+- Notes per contact with add, edit, and delete
+- Search by name, company, or email
+- Filter by pipeline status
+- Sort by name, date added, or follow-up date
+- Form validation on required fields
+- Data persists in the browser via localStorage
 
 ## Project Structure
