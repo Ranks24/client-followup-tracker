@@ -13,9 +13,24 @@
         </header>
 
         <main>
-            <div id="form-container"></div>
-            <div id="contact-list"></div>
-        </main>
+  <div id="controls">
+    <select id="filter-status">
+      <option value="All">All Statuses</option>
+      <option value="New">New</option>
+      <option value="Contacted">Contacted</option>
+      <option value="Proposal Sent">Proposal Sent</option>
+      <option value="Won">Won</option>
+      <option value="Lost">Lost</option>
+    </select>
+    <select id="sort-by">
+      <option value="createdAt">Sort by Date Added</option>
+      <option value="name">Sort by Name</option>
+      <option value="followUpDate">Sort by Follow-Up Date</option>
+    </select>
+  </div>
+  <div id="form-container"></div>
+  <div id="contact-list"></div>
+</main>
 
         <script src="data.js"></script>
         <script src="components/contactForm.js"></script>
