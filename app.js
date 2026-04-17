@@ -17,14 +17,39 @@ function openForm(existingContact = null) {
   container.appendChild(form);
 }
 
+function getFilteredAndSorted(contacts) {
+  const filterValue = document.getElementById('filter-status').value;
+  const sortValue = document.getElementById('sort-by').value;
+
+  let result = [...contacts];
+
+  if (filterValue !== 'All') {
+    result = result.filter(c => c.status === filterValue);
+  }
+
+  result.sort((a, b) => {
+    if (sortValue === 'name') {
+      return a.name.localeCompare(b.name);
+    }
+    if (sortValue === 'followUpDate') {
+      if (!a.followUpDate) return 1;
+      if (!b.followUpDate) return -1;
+      return new Date(a.followUpDate) - new Date(b.followUpDate);
+    }
+    return new Date(a.createdAt) - new Date(b.createdAt);
+  });
+
+  return result;
+}
+
 function renderContacts() {
   const list = document.getElementById('contact-list');
   list.innerHTML = '';
 
-  const contacts = getAllContacts();
+  const contacts = getFilteredAndSorted(getAllContacts());
 
   if (contacts.length === 0) {
-    list.innerHTML = '<p style="padding:24px;color:#666;">No contacts yet. Add one to get started.</p>';
+    list.innerHTML = '<p style="padding:24px;color:#666;">No contacts found.</p>';
     return;
   }
 
@@ -63,5 +88,8 @@ function renderContacts() {
 document.getElementById('add-contact-btn').addEventListener('click', () => {
   openForm();
 });
+
+document.getElementById('filter-status').addEventListener('change', renderContacts);
+document.getElementById('sort-by').addEventListener('change', renderContacts);
 
 renderContacts();
