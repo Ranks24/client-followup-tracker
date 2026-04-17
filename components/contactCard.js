@@ -1,4 +1,4 @@
-function createContactCard(contact, onDelete) {
+function createContactCard(contact, onDelete, onEdit) {
   const card = document.createElement('div');
   card.className = 'contact-card';
 
@@ -11,8 +11,15 @@ function createContactCard(contact, onDelete) {
     <span>${contact.phone}</span>
     <span>${contact.followUpDate || 'Not set'}</span>
     <span><span class="status-badge ${statusClass}">${contact.status}</span></span>
-    <button class="delete-btn" data-id="${contact.id}">Delete</button>
+    <div class="card-actions">
+      <button class="edit-btn" data-id="${contact.id}">Edit</button>
+      <button class="delete-btn" data-id="${contact.id}">Delete</button>
+    </div>
   `;
+
+  card.querySelector('.edit-btn').addEventListener('click', () => {
+    onEdit(contact);
+  });
 
   card.querySelector('.delete-btn').addEventListener('click', () => {
     onDelete(contact.id);

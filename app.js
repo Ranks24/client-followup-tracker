@@ -1,3 +1,22 @@
+function openForm(existingContact = null) {
+  const container = document.getElementById('form-container');
+  container.innerHTML = '';
+  container.classList.add('active');
+
+  const form = createContactForm((contact) => {
+    if (existingContact) {
+      updateContact(contact);
+    } else {
+      saveContact(contact);
+    }
+    container.classList.remove('active');
+    container.innerHTML = '';
+    renderContacts();
+  }, existingContact);
+
+  container.appendChild(form);
+}
+
 function renderContacts() {
   const list = document.getElementById('contact-list');
   list.innerHTML = '';
@@ -23,26 +42,22 @@ function renderContacts() {
   list.appendChild(header);
 
   contacts.forEach(contact => {
-    const card = createContactCard(contact, (id) => {
-      deleteContact(id);
-      renderContacts();
-    });
+    const card = createContactCard(
+      contact,
+      (id) => {
+        deleteContact(id);
+        renderContacts();
+      },
+      (contact) => {
+        openForm(contact);
+      }
+    );
     list.appendChild(card);
   });
 }
 
 document.getElementById('add-contact-btn').addEventListener('click', () => {
-  const container = document.getElementById('form-container');
-  container.classList.add('active');
-
-  const form = createContactForm((contact) => {
-    saveContact(contact);
-    container.classList.remove('active');
-    container.innerHTML = '';
-    renderContacts();
-  });
-
-  container.appendChild(form);
+  openForm();
 });
 
 renderContacts();
