@@ -50,6 +50,10 @@ function renderContacts() {
       },
       (contact) => {
         openForm(contact);
+      },
+      (updatedContact) => {
+        updateContact(updatedContact);
+        renderContacts();
       }
     );
     list.appendChild(card);
