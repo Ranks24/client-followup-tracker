@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f8;
+  color: #1a1a1a;
+}
+
+header {
+  background: #1e3a5f;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#add-contact-btn {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#add-contact-btn:hover {
+  background: #27ae60;
+}
+
+main {
+  padding: 24px;
+}
+
+#contact-list {
+  width: 100%;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1.5fr 1.5fr 1fr 120px;
+  background: #1e3a5f;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1.5fr 1.5fr 1fr 120px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e8ecf0;
+  align-items: center;
+  font-size: 14px;
+}
+
+.contact-card:hover {
+  background: #f0f4f8;
+}
+
+.contact-card:last-child {
+  border-bottom: none;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-New { background: #dbeafe; color: #1e40af; }
+.status-Contacted { background: #fef9c3; color: #854d0e; }
+.status-Proposal-Sent { background: #ede9fe; color: #5b21b6; }
+.status-Won { background: #dcfce7; color: #166534; }
+.status-Lost { background: #fee2e2; color: #991b1b; }
+
+.delete-btn {
+  background: none;
+  border: 1px solid #e53e3e;
+  color: #e53e3e;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-btn:hover {
+  background: #e53e3e;
+  color: white;
+}
+
+#form-container {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+#form-container.active {
+  display: flex;
+}
+
+#contact-form {
+  background: white;
+  padding: 32px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#contact-form h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1e3a5f;
+}
+
+#contact-form input,
+#contact-form select {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}
+
+#contact-form input:focus,
+#contact-form select:focus {
+  outline: none;
+  border-color: #1e3a5f;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+#f-submit {
+  flex: 1;
+  background: #1e3a5f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#f-cancel {
+  flex: 1;
+  background: white;
+  color: #1e3a5f;
+  border: 1px solid #1e3a5f;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.edit-btn {
+  background: none;
+  border: 1px solid #1e3a5f;
+  color: #1e3a5f;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.edit-btn:hover {
+  background: #1e3a5f;
+  color: white;
+}
