@@ -71,3 +71,305 @@ main {
   align-items: center;
   font-size: 14px;
 }
+
+.contact-card:hover {
+  background: #f0f4f8;
+}
+
+.contact-card:last-child {
+  border-bottom: none;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-New { background: #dbeafe; color: #1e40af; }
+.status-Contacted { background: #fef9c3; color: #854d0e; }
+.status-Proposal-Sent { background: #ede9fe; color: #5b21b6; }
+.status-Won { background: #dcfce7; color: #166534; }
+.status-Lost { background: #fee2e2; color: #991b1b; }
+
+.delete-btn {
+  background: none;
+  border: 1px solid #e53e3e;
+  color: #e53e3e;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-btn:hover {
+  background: #e53e3e;
+  color: white;
+}
+
+#form-container {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+#form-container.active {
+  display: flex;
+}
+
+#contact-form {
+  background: white;
+  padding: 32px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#contact-form h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1e3a5f;
+}
+
+#contact-form input,
+#contact-form select {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}
+
+#contact-form input:focus,
+#contact-form select:focus {
+  outline: none;
+  border-color: #1e3a5f;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+#f-submit {
+  flex: 1;
+  background: #1e3a5f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#f-cancel {
+  flex: 1;
+  background: white;
+  color: #1e3a5f;
+  border: 1px solid #1e3a5f;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.edit-btn {
+  background: none;
+  border: 1px solid #1e3a5f;
+  color: #1e3a5f;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.edit-btn:hover {
+  background: #1e3a5f;
+  color: white;
+}
+
+.contact-card-wrapper {
+  border-bottom: 1px solid #e8ecf0;
+}
+
+.contact-card-wrapper .contact-card {
+  border-bottom: none;
+}
+
+.notes-panel {
+  background: #f8fafc;
+  padding: 16px 24px;
+  border-top: 1px solid #e8ecf0;
+}
+
+.notes-list {
+  margin-bottom: 12px;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e8ecf0;
+  font-size: 13px;
+}
+
+.note-date {
+  color: #888;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+.no-notes {
+  color: #888;
+  font-size: 13px;
+}
+
+.note-input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.note-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.note-submit-btn {
+  background: #1e3a5f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.note-submit-btn:hover {
+  background: #162d4a;
+}
+
+.note-view {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.note-actions {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.note-edit-btn {
+  background: none;
+  border: 1px solid #1e3a5f;
+  color: #1e3a5f;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.note-delete-btn {
+  background: none;
+  border: 1px solid #e53e3e;
+  color: #e53e3e;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.note-edit-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.note-edit-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.note-save-btn {
+  background: #1e3a5f;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.note-cancel-btn {
+  background: white;
+  color: #1e3a5f;
+  border: 1px solid #1e3a5f;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+#controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+#controls select {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+  color: #1a1a1a;
+}
+
+#controls select:focus {
+  outline: none;
+  border-color: #1e3a5f;
+}
+
+#search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #1e3a5f;
+}
